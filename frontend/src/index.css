@@ -1,0 +1,326 @@
+
+/* =========================================
+   CivicLens India — Global Styles
+   File: src/index.css
+   ========================================= */
+
+/* 1. Global Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family:
+    Inter, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+
+  color: #172b45;
+  background: #f5f7fa;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --color-primary: #174a8b;
+  --color-primary-dark: #103768;
+  --color-secondary: #e87924;
+  --color-success: #16834a;
+  --color-danger: #c62828;
+  --color-text: #172b45;
+  --color-muted: #607086;
+  --color-background: #f5f7fa;
+  --color-surface: #ffffff;
+  --color-border: #dce3ec;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  --shadow-sm: 0 2px 8px rgba(20, 42, 72, 0.06);
+  --shadow-md: 0 8px 24px rgba(20, 42, 72, 0.1);
+
+  --container-width: 1200px;
+}
+
+/* 2. Document Defaults */
+html {
+  min-width: 320px;
+  min-height: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--color-text);
+  background: var(--color-background);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* 3. React Root */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* 4. Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  color: inherit;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3vw, 2.35rem);
+}
+
+h3 {
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+}
+
+p {
+  margin-top: 0;
+}
+
+small {
+  font-size: 0.875rem;
+}
+
+strong {
+  font-weight: 700;
+}
+
+/* 5. Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+a:focus-visible {
+  outline: 3px solid #f4a340;
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* 6. Buttons and Form Controls */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+input,
+select,
+textarea {
+  max-width: 100%;
+}
+
+input,
+select,
+textarea,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(23, 74, 139, 0.35);
+  outline-offset: 2px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+/* 7. Lists */
+ul,
+ol {
+  padding-left: 1.5rem;
+}
+
+li+li {
+  margin-top: 0.25rem;
+}
+
+/* 8. Layout Helpers */
+.container {
+  width: min(calc(100% - 40px), var(--container-width));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: 64px;
+}
+
+.section-heading {
+  margin-bottom: 12px;
+}
+
+.section-description {
+  max-width: 720px;
+  color: var(--color-muted);
+}
+
+/* 9. Selection */
+::selection {
+  color: #ffffff;
+  background: var(--color-primary);
+}
+
+/* 10. Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #aebed0 #edf1f6;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #edf1f6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #aebed0;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #879bb3;
+}
+
+/* 11. Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+th {
+  font-weight: 700;
+  background: #f0f4f8;
+}
+
+/* 12. Utility Classes */
+.text-muted {
+  color: var(--color-muted);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-success {
+  color: var(--color-success);
+}
+
+.text-danger {
+  color: var(--color-danger);
+}
+
+.w-full {
+  width: 100%;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* 13. Mobile and Tablet */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  .container {
+    width: min(calc(100% - 28px), var(--container-width));
+  }
+
+  .section {
+    padding-block: 42px;
+  }
+
+  th,
+  td {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  .section {
+    padding-block: 32px;
+  }
+}
+
+/* 14. Accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
